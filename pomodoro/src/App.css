@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.circle {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.innerCircle {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: #ffffcc; /* Amarillo muy claro */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+}
+
+#startButton {
+  margin-top: 1vw;
+  padding: 1vw 2.24vw;
+  font-size: 2vw;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+#timer {
+  font-size: 3.25vw;
+  align-items: center;
+  align-content: center;
+  text-align:center;
 }
 
-@keyframes App-logo-spin {
+input {
+  width: 50%;
+  text-align: center;
+  font-size: 3vw;
+  border-color: black;
+  border-width: 0.2vw;
+  border-style: solid;
+  outline: none;
+  transition: transform 0.3 ease;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  border-radius: 10%;
+}
+
+@keyframes focusAnimation {
   from {
-    transform: rotate(0deg);
+    transform: scale(1);
+    background-color: white;
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1.25);
+    background-color: #e4e42f;
   }
 }
+@keyframes blurAnimation {
+  from {
+    transform: scale(1.25);
+    background-color: #e4e42f;
+  }
+  to {
+    transform: scale(1);
+    background-color: white;
+  }
+}
+
+.input_focus {
+  animation-name: focusAnimation;
+}
+
+.input_blur {
+  animation-name: blurAnimation;
+}
+
